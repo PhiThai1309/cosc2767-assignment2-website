@@ -8,19 +8,19 @@ pipeline {
     // }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout source code from Git repository
-                git branch: 'main', url: 'https://github.com/PhiThai1309/Simple-Webapp-COSC2767.git'
-                // // Installing dependencies
-                // yum install git -y
+        // stage('Checkout') {
+        //     steps {
+        //         // Checkout source code from Git repository
+        //         git branch: 'main', url: 'https://github.com/PhiThai1309/Simple-Webapp-COSC2767.git'
+        //         // // Installing dependencies
+        //         // yum install git -y
 
-                // // Git configuration
-                // git config --global user.email "s3878070@rmit.edu.vn"
-                // git config --global user.name "Phi Thai"
-                // git config --global init.defaultBranch main
-            }
-        }
+        //         // // Git configuration
+        //         // git config --global user.email "s3878070@rmit.edu.vn"
+        //         // git config --global user.name "Phi Thai"
+        //         // git config --global init.defaultBranch main
+        //     }
+        // }
 
         stage('Build') {
             // agent {
