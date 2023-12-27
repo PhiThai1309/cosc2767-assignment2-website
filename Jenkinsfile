@@ -14,7 +14,17 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://3.95.183.209:8080')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
+
+                    // Determine current IP address
+                    def currentIpAddress = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
+
+                    // Replace the placeholder IP address in the Tomcat URL
+                    def tomcatUrl = "http://${currentIpAddress}:8080"
+
+                    // Deploy to Tomcat with the updated URL
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: tomcatUrl)], contextPath: '/pipeline', onFailure: false, war: '**/*.war'
+
+                    // deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://3.95.183.209:8080')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
                 }
             }
         }
