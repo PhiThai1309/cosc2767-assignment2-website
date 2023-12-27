@@ -14,7 +14,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-
                     // Determine current IP address
                     def currentIpAddress = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
 
