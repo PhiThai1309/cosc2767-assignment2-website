@@ -18,7 +18,7 @@ pipeline {
                     def currentIpAddress = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
 
                     // Replace the placeholder IP address in the Tomcat URL
-                    def tomcatUrl = "http://${currentIpAddress}:8080"
+                    def tomcatUrl = "http://${currentIpAddress}:8081"
 
                     // Deploy to Tomcat with the updated URL
                     deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: tomcatUrl)], contextPath: '/pipeline', onFailure: false, war: '**/*.war'
