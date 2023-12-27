@@ -14,8 +14,8 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Get the current IP address using ifconfig (Linux) or ipconfig (Windows)
-                    def currentIpAddress = sh(script: 'ifconfig | grep "inet " | awk \'{print $2}\' | grep -vE "127.0.0.1|::1"', returnStdout: true).trim()
+                    // Determine current IP address
+                    def currentIpAddress = sh(script: 'curl -s ifconfig.me', returnStdout: true).trim()
 
                     // Replace the placeholder IP address in the Tomcat URL
                     def tomcatUrl = "http://${currentIpAddress}:8081"
