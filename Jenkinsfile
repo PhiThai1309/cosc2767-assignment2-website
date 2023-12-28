@@ -21,7 +21,7 @@ pipeline {
                     echo ${env.IP_ADDRESS}
                 """.stripMargin()
                 script {
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://${env.IP_ADDRESS}:8081')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: "http://${env.IP_ADDRESS}:8081")], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
                 }
             }
         }
