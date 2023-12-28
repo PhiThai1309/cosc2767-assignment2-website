@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IP_ADDRESS = "${IP_ADDRESS}"
+        IP_ADDRESS = "${env.IP_ADDRESS}"
     }
 
     stages {
@@ -17,11 +17,11 @@ pipeline {
         //Deploy on Tomcat
         stage('Deploy') {
             steps {
+                sh"""
+                    echo ${env.IP_ADDRESS}
+                """.stripMargin()
                 script {
-                    sh """
-                    echo ${IP_ADDRESS}
-                    """
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://${IP_ADDRESS}:8081')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://${env.IP_ADDRESS}:8081')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
                 }
             }
         }
