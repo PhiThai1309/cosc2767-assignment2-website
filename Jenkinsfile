@@ -12,7 +12,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: "http://3.83.102.118:8080")], contextPath: '/s3878070-website', onFailure: false, war: '**/*.war'
+                    def ipAddress = env.IP_ADDRESS
+                    def tomcatUrl = "http://" + ipAddress + ":8080"
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: tomcatUrl)], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
                 }
             }
         }
