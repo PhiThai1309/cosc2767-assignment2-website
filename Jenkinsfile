@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        IP_ADDRESS = "${IP_ADDRESS}"
+    }
+    
     stages {
         //Build the project with maven
         stage('Build') {
