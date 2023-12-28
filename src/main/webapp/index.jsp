@@ -34,7 +34,7 @@
       <p>Here is the information you need to change:</p>
       <span class="badge badge-primary">Thai Manh Phi</span>
       <br>
-      <span class="badge badge-secondary">s3878070</span>
+      <span class="badge badge-secondary">Your student ID (sID)</span>
       <br>
       <span class="badge badge-success">Your Major (and Minor if possible)</span>
       <br>
