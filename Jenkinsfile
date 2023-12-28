@@ -17,7 +17,7 @@ pipeline {
                     withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId:'IP_ADDRESS',
                     usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']
                     ]) {
-                        deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://$(env.USERNAME):8081')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
+                        deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: 'http://$USERNAME:8081')], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
                     }
                     
                 }
