@@ -14,7 +14,7 @@ pipeline {
                 script {
                     def ipAddress = env.IP_ADDRESS
                     def tomcatUrl = 'http://' + ipAddress + ':8080'
-                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: tomcatUrl)], contextPath: '/pipeline', onFailure: false, war: '**/*.war' 
+                    deploy adapters: [tomcat9(credentialsId: 'tomcat_credential', path: '', url: tomcatUrl)], contextPath: '/s3878070', onFailure: false, war: '**/*.war' 
                 }
             }
         }
