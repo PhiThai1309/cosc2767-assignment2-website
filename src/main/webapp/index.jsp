@@ -36,9 +36,9 @@
       <br>
       <span class="badge badge-secondary">s3878070</span>
       <br>
-      <span class="badge badge-success">Your Major (and Minor if possible)</span>
+      <span class="badge badge-success">Software Engineering</span>
       <br>
-      <span class="badge badge-danger">Your Hobby</span>
+      <span class="badge badge-danger">Coding</span>
       <br>
       <span class="badge badge-warning">Your Favouritate Programming Language</span>
       <!-- You only need to change these information, ends here! -->
