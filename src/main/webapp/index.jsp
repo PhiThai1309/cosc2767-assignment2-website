@@ -40,7 +40,7 @@
       <br>
       <span class="badge badge-danger">Coding</span>
       <br>
-      <span class="badge badge-warning">Your Favouritate Programming Language</span>
+      <span class="badge badge-warning">Swift, Java, HTML, CSS</span>
       <!-- You only need to change these information, ends here! -->
       
 
