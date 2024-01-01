@@ -38,7 +38,7 @@
       <br>
       <span class="badge badge-success">Software Engineering</span>
       <br>
-      <span class="badge badge-danger">Coding</span>
+      <span class="badge badge-danger">Coding, watching a movie, sleeping</span>
       <br>
       <span class="badge badge-warning">Swift, Java, HTML, CSS</span>
       <!-- You only need to change these information, ends here! -->
